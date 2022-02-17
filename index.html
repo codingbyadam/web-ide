@@ -1,0 +1,58 @@
+<head>
+<style>
+	* {
+  box-sizing: border-box;
+	}
+	
+	#instructionDiv, #frameDiv, #codeDiv {
+		height: 80vh;
+		width: 32%;
+		float: left;
+	}
+	#code {
+		height: 80vh;
+		width: 95%;
+		border: 1px solid;
+	}
+	#codeFrame {
+		font-size: 10px;
+		height: 80vh;
+		width: 100%;
+		border: 1px solid;
+		position: relative;
+		overflow: scroll;
+		float: right;
+	}
+	
+	</style>
+</head>
+
+<div id="instructionDiv">
+	<h1>Assignment</h1>
+	<iframe width="95%" height="315" src="https://www.youtube.com/embed/cKhVupvyhKk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<br>
+	<p>Since the result of using the box-sizing: border-box; is so much better, many developers want all elements on their pages to work this way.</p>
+
+	<p>The code below ensures that all elements are sized in this more intuitive way. Many browsers already use box-sizing: border-box; for many form elements (but not all - which is why inputs and text areas look different at width: 100%;).</p>
+
+	<p>Applying this to all elements is safe and wise:</p>
+</div>
+<div id="codeDiv">
+	<h1>Write Code Here</h1>
+	<textarea id="code"></textarea>
+	<button id="runCode">Run Code</button>
+</div>
+<div id="frameDiv">
+	<h1>View Code</h1>
+<div id="codeFrame">
+</div></div>
+
+<script>
+	document.getElementById("runCode").addEventListener("click", runCode);
+	
+	function runCode(){
+		var code = document.getElementById("code").value;
+		document.getElementById("codeFrame").innerHTML = code;
+	}
+	
+</script>
